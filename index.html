@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+    <canvas
+            id="myCanvas"
+    ></canvas>
+</body>
+
+<script>
+    // 获取元素
+    var doc=document.getElementById("myCanvas");
+    // 创建 context 对象
+    var ctx=doc.getContext("2d");
+    ctx.fillStyle="#FF0000"; // 填充色
+    ctx.fillRect(0,0,200,100); // 在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。
+
+    ctx.moveTo(0,0); // 定义线条开始坐标
+    ctx.lineTo(200,100); // 定义线条结束坐标
+    ctx.stroke(); // 绘制线条
+
+    ctx.beginPath(); // 开始一条路径
+    // context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+    // x	圆的中心的 x 坐标。
+    // y	圆的中心的 y 坐标。
+    // r	圆的半径。
+    // sAngle	起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。
+    // eAngle	结束角，以弧度计。counterclockwise	可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。
+    ctx.arc(95,50,40,0,0.5*Math.PI);
+    ctx.stroke();
+
+
+    ctx.font="30px Arial"; // 字体样式
+    ctx.strokeText("Hello World",10,50); // 字体内容和开始坐标
+
+
+</script>
+
+
+</html>
